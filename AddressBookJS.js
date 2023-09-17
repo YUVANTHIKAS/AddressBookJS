@@ -16,13 +16,19 @@ class AddressBook {
     constructor() {
         this.contacts = [];
     }
-
     addNewContact(contact) {
         validate(contact);
         this.contacts.push(contact);
         console.log(contact.FirstName + " contact Added ");
     }
-
+    duplicateContact(contact) {
+        if (this.contacts.some((element) => element.FirstName == contact.FirstName)) {
+            console.log("Contact already Exists");
+        }
+        else {
+            this.addNewContact(contact)
+        }
+    }
     displayContactDetails() {
         this.contacts.forEach(element => {
             console.log("Full Name: " + element.FirstName + " " + element.LastName);
@@ -94,6 +100,8 @@ function validate(Details) {
 }
 
 const addressbook = new AddressBook();
+
+
 const Contact1 = new Contact(
     FirstName= "Yuvanthika",
     LastName= "Sarathy",
@@ -124,17 +132,17 @@ const Contact3 = new Contact(
     Email = "malini@gmail.com");
 addressbook.addNewContact(Contact3);
 
-/*const UpdateContact = new Contact(
-    FirstName = "Riya",
-    LastName = "Susan",
-    Address = "Annikkanadu",
-    City = "Pathanamthitta",
-    State = "Kerala",
+    const UpdateContact = new Contact(
+    FirstName = "sarathy",
+    LastName = "S",
+    Address = "Gandhi nagar",
+    City = "trichy",
+    State = "TN",
     Zip = "987654",
     PhoneNumber = "1123445678",
-    Email = "rsr@gmail.com");
-addressbook.EditContact(UpdateContact)*/
+    Email = "sarathy@gmail.com");
 
-addressbook.DeleteContact("malini");
+//addressbook.DeleteContact("malini");
 addressbook.displayContactDetails();
 addressbook.CountContact();
+addressbook.duplicateContact(Contact3);
