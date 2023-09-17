@@ -29,29 +29,9 @@ class AddressBook {
     }
 }
 
-const addressbook = new AddressBook();
-const Contact1 = new Contact(
-    FirstName= "Yuvanthika",
-    LastName= "Sarathy",
-    Address= "KN road",
-    City= "Vellore",
-    State= "TN",
-    Zip ="689642",
-    PhoneNumber= "1234567890",
-    Email= "yuvan@gmail.com");
-const Contact2 = new Contact(
-    FirstName="rosy",
-    LastName= "S",
-    Address= "poomagal road",
-    City= "chennai",
-    State= "TN",
-    Zip= "123456",
-    PhoneNumber= "1023445678",
-    Email= "rosy@gmail.com");
-
-function validateName(Details) {
-    console.log(Details.FirstName + " " + Details.LastName + " " + Details.Address + " " + Details.City 
-    + " " + Details.State + " " + Details.Zip + " " + Details.PhoneNumber + " " + Details.Email);
+function validate(Details) {
+    console.log(Details.FirstName + " " + Details.LastName + " " + Details.Address + " " + Details.City
+        + " " + Details.State + " " + Details.Zip + " " + Details.PhoneNumber + " " + Details.Email);
     if (!/^[A-Z][a-zA-Z]{2,}$/.test(Details.FirstName)) {
         throw new Error("Invalid First Name");
     }
@@ -81,6 +61,37 @@ function validateName(Details) {
     }
 }
 
-validateName(Contact1);
-validateName(Contact2)
+const addressbook = new AddressBook();
+const Contact1 = new Contact(
+    FirstName= "Yuvanthika",
+    LastName= "Sarathy",
+    Address= "KN road",
+    City= "Vellore",
+    State= "TN",
+    Zip ="689642",
+    PhoneNumber= "1234567890",
+    Email= "yuvan@gmail.com");
+const Contact2 = new Contact(
+    FirstName="rosy",
+    LastName= "S",
+    Address= "poomagal road",
+    City= "chennai",
+    State= "TN",
+    Zip= "123456",
+    PhoneNumber= "1023445678",
+    Email= "rosy@gmail.com");
+validate(Contact1);
+validate(Contact2);
+
+const Contact3 = new Contact(
+    FirstName = "malini",
+    LastName = "c",
+    Address = "Anaicut",
+    City = "vellore",
+    State = "andhra",
+    Zip = "123456",
+    PhoneNumber = "1023445678",
+    Email = "malini@gmail.com");
+validate(Contact3);
+
 addressbook.displayContactDetails();
