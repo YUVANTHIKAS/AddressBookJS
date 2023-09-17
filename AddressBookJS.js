@@ -79,6 +79,16 @@ class AddressBook {
             console.log("Full Name: " + element.FirstName + " " + element.LastName);
         })
     }
+    CountCity(city)
+    {
+        this.citySearch = this.contacts.filter((element)=>element.City == city);
+        console.log("The total number of contacts in the city " + city + " are: "+this.citySearch.length);
+    }
+    CountState(state)
+    {
+        this.stateSearch = this.contacts.filter((element)=>element.State == state);
+        console.log("The total number of contacts in the state " + " are: "+this.stateSearch.length);
+    }
 }
 
 function validate(Details) {
@@ -160,5 +170,7 @@ addressbook.addNewContact(Contact3);
 //addressbook.displayContactDetails();
 //addressbook.CountContact();
 //addressbook.duplicateContact(Contact3);
-addressbook.City("vellore","malini");
-addressbook.State("TN","rosy");
+//addressbook.City("vellore","malini");
+//addressbook.State("TN","rosy");
+addressbook.CountCity("vellore");
+addressbook.CountState("TN");
