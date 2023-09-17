@@ -160,5 +160,5 @@ addressbook.addNewContact(Contact3);
 //addressbook.displayContactDetails();
 //addressbook.CountContact();
 //addressbook.duplicateContact(Contact3);
-addressbook.City("vellore");
-addressbook.State("TN");
+addressbook.City("vellore","malini");
+addressbook.State("TN","rosy");
