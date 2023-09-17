@@ -89,6 +89,7 @@ class AddressBook {
         this.stateSearch = this.contacts.filter((element)=>element.State == state);
         console.log("The total number of contacts in the state " + " are: "+this.stateSearch.length);
     }
+    
     SortName() {
         this.contacts.sort((a, b) => {
             let n1 = a.FirstName;
@@ -98,6 +99,42 @@ class AddressBook {
             else
                 return 1;
         });
+        this.displayContactDetails();
+    }
+    SortCity() {
+        this.contacts.sort((a, b) => {
+            let n1 = a.City;
+            let n2 = b.City;
+            if (n1 < n2)
+                return -1;
+            else
+                return 1;
+        });
+        console.log("Sorted by city:");
+        this.displayContactDetails();
+    }
+    SortState() {
+        this.contacts.sort((a, b) => {
+            let n1 = a.State;
+            let n2 = b.State;
+            if (n1 < n2)
+                return -1;
+            else
+                return 1;
+        });
+        console.log("Sorted by state:");
+        this.displayContactDetails();
+    }
+    SortZip() {
+        this.contacts.sort((a, b) => {
+            let n1 = a.Zip;
+            let n2 = b.Zip;
+            if (n1 < n2)
+                return -1;
+            else
+                return 1;
+        });
+        console.log("Sorted by zip:");
         this.displayContactDetails();
     }
 
@@ -186,4 +223,7 @@ addressbook.addNewContact(Contact3);
 //addressbook.State("TN","rosy");
 //addressbook.CountCity("vellore");
 //addressbook.CountState("TN");
-addressbook.SortName();
+//addressbook.SortName();
+addressbook.SortCity();
+addressbook.SortState();
+addressbook.SortZip();
