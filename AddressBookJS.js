@@ -65,6 +65,20 @@ class AddressBook {
         }, 0);
         console.log("Total number of contacts in the Addressbook: " + count);
     }
+    City(city) {
+        const citySearch = this.contacts.filter((element) => element.City == city);
+        console.log("The persons in the city " + city + " are: ");
+        citySearch.forEach(element => {
+            console.log("Full Name: " + element.FirstName + " " + element.LastName);
+        })
+    }
+    State(state) {
+        const stateSearch = this.contacts.filter((element) => element.State == state);
+        console.log("The persons in the state " + state + " are: ");
+        stateSearch.forEach(element => {
+            console.log("Full Name: " + element.FirstName + " " + element.LastName);
+        })
+    }
 }
 
 function validate(Details) {
@@ -143,6 +157,8 @@ addressbook.addNewContact(Contact3);
     Email = "sarathy@gmail.com");
 
 //addressbook.DeleteContact("malini");
-addressbook.displayContactDetails();
-addressbook.CountContact();
-addressbook.duplicateContact(Contact3);
+//addressbook.displayContactDetails();
+//addressbook.CountContact();
+//addressbook.duplicateContact(Contact3);
+addressbook.City("vellore");
+addressbook.State("TN");
