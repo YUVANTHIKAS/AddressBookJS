@@ -44,12 +44,20 @@ class AddressBook {
         });
     }
     DeleteContact(name) {
+        var a = 0;
         this.contacts.forEach(element => {
             if (name == element.FirstName) {
-                this.contacts.pop(element);
+                this.contacts.splice(a, 1);
                 console.log(name + " deleted Successfully");
             }
+            a++;
         });
+    }
+    CountContact() {
+        const count = this.contacts.reduce((count, sum) => {
+            return count + 1
+        }, 0);
+        console.log("Total number of contacts in the Addressbook: " + count);
     }
 }
 
@@ -86,7 +94,6 @@ function validate(Details) {
 }
 
 const addressbook = new AddressBook();
-
 const Contact1 = new Contact(
     FirstName= "Yuvanthika",
     LastName= "Sarathy",
@@ -118,15 +125,16 @@ const Contact3 = new Contact(
 addressbook.addNewContact(Contact3);
 
 /*const UpdateContact = new Contact(
-    FirstName = "sarathy",
-    LastName = "S",
-    Address = "Gandhi nagar",
-    City = "trichy",
-    State = "TN",
+    FirstName = "Riya",
+    LastName = "Susan",
+    Address = "Annikkanadu",
+    City = "Pathanamthitta",
+    State = "Kerala",
     Zip = "987654",
     PhoneNumber = "1123445678",
-    Email = "sarathy@gmail.com");
+    Email = "rsr@gmail.com");
 addressbook.EditContact(UpdateContact)*/
 
 addressbook.DeleteContact("malini");
 addressbook.displayContactDetails();
+addressbook.CountContact();
